@@ -1,0 +1,6 @@
+pyautogen
+pyautogen[gemini]
+flaml[automl]
+autogen-agentchat~=0.2
+
+

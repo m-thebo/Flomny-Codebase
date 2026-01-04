@@ -1,0 +1,4617 @@
+{
+	"info": {
+		"_postman_id": "c2f38593-0b81-4e6c-a9e3-04f49f842621",
+		"name": "ERP System API",
+		"description": "A comprehensive REST API for an Enterprise Resource Planning (ERP) system\n\nContact Support:\n Name: API Support\n Email: support@erpsystem.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40779145",
+		"_collection_link": "https://multiagent-fyp.postman.co/workspace/MultiAgent-FYP-Workspace~f0657136-3a4c-4d04-8643-ece2c08dfd71/collection/40779145-c2f38593-0b81-4e6c-a9e3-04f49f842621?action=share&source=collection_link&creator=40779145"
+	},
+	"item": [
+		{
+			"name": "inventory",
+			"item": [
+				{
+					"name": "items",
+					"item": [
+						{
+							"name": "{itemId}",
+							"item": [
+								{
+									"name": "Get a specific inventory item",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/inventory/items/:itemId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"items",
+												":itemId"
+											],
+											"variable": [
+												{
+													"key": "itemId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Inventory item details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/inventory/items/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"inventory",
+														"items",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "itemId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Item not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/inventory/items/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"inventory",
+														"items",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "itemId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Update an inventory item",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/inventory/items/:itemId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"items",
+												":itemId"
+											],
+											"variable": [
+												{
+													"key": "itemId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Inventory item updated successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/inventory/items/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"inventory",
+														"items",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "itemId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Item not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/inventory/items/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"inventory",
+														"items",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "itemId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete an inventory item",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/inventory/items/:itemId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"items",
+												":itemId"
+											],
+											"variable": [
+												{
+													"key": "itemId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Item deleted successfully",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/inventory/items/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"inventory",
+														"items",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "itemId"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Item not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/inventory/items/:itemId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"inventory",
+														"items",
+														":itemId"
+													],
+													"variable": [
+														{
+															"key": "itemId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all inventory items",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/inventory/items",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory",
+										"items"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of inventory items",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/inventory/items",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"items"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"category\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<float>\",\n    \"cost\": \"<float>\",\n    \"supplier\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"sku\": \"<string>\",\n    \"category\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<float>\",\n    \"cost\": \"<float>\",\n    \"supplier\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new inventory item",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/inventory/items",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory",
+										"items"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Inventory item created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/inventory/items",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"items"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"sku\": \"<string>\",\n  \"category\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"cost\": \"<float>\",\n  \"supplier\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/inventory/items",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"items"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "stock-levels",
+					"item": [
+						{
+							"name": "Get stock levels for all items",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/inventory/stock-levels",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory",
+										"stock-levels"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of stock levels",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/inventory/stock-levels",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"stock-levels"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"itemId\": \"<uuid>\",\n    \"quantity\": \"<integer>\",\n    \"location\": \"<string>\",\n    \"minimumLevel\": \"<integer>\",\n    \"reorderLevel\": \"<integer>\",\n    \"lastUpdated\": \"<dateTime>\"\n  },\n  {\n    \"itemId\": \"<uuid>\",\n    \"quantity\": \"<integer>\",\n    \"location\": \"<string>\",\n    \"minimumLevel\": \"<integer>\",\n    \"reorderLevel\": \"<integer>\",\n    \"lastUpdated\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "adjust-stock",
+					"item": [
+						{
+							"name": "Adjust stock quantity for an item",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"itemId\": \"<uuid>\",\n  \"adjustment\": \"<integer>\",\n  \"reason\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/inventory/adjust-stock",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory",
+										"adjust-stock"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Stock adjusted successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"itemId\": \"<uuid>\",\n  \"adjustment\": \"<integer>\",\n  \"reason\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/inventory/adjust-stock",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"adjust-stock"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"stockLevel\": {\n    \"itemId\": \"<uuid>\",\n    \"quantity\": \"<integer>\",\n    \"location\": \"<string>\",\n    \"minimumLevel\": \"<integer>\",\n    \"reorderLevel\": \"<integer>\",\n    \"lastUpdated\": \"<dateTime>\"\n  },\n  \"adjustment\": {\n    \"id\": \"<uuid>\",\n    \"itemId\": \"<uuid>\",\n    \"previousQuantity\": \"<integer>\",\n    \"adjustment\": \"<integer>\",\n    \"newQuantity\": \"<integer>\",\n    \"reason\": \"<string>\",\n    \"timestamp\": \"<dateTime>\"\n  }\n}"
+								},
+								{
+									"name": "Item not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"itemId\": \"<uuid>\",\n  \"adjustment\": \"<integer>\",\n  \"reason\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/inventory/adjust-stock",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												"adjust-stock"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "procurement",
+			"item": [
+				{
+					"name": "vendors",
+					"item": [
+						{
+							"name": "{vendorId}",
+							"item": [
+								{
+									"name": "Get a specific vendor",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/procurement/vendors/:vendorId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"procurement",
+												"vendors",
+												":vendorId"
+											],
+											"variable": [
+												{
+													"key": "vendorId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Vendor details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/procurement/vendors/:vendorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"procurement",
+														"vendors",
+														":vendorId"
+													],
+													"variable": [
+														{
+															"key": "vendorId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Vendor not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/procurement/vendors/:vendorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"procurement",
+														"vendors",
+														":vendorId"
+													],
+													"variable": [
+														{
+															"key": "vendorId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all vendors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/procurement/vendors",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"procurement",
+										"vendors"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of vendors",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/procurement/vendors",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"procurement",
+												"vendors"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"contact\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"contact\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new vendor",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/procurement/vendors",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"procurement",
+										"vendors"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Vendor created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/procurement/vendors",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"procurement",
+												"vendors"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "purchase-orders",
+					"item": [
+						{
+							"name": "{orderId}",
+							"item": [
+								{
+									"name": "status",
+									"item": [
+										{
+											"name": "Update the status of a purchase order",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/procurement/purchase-orders/:orderId/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"procurement",
+														"purchase-orders",
+														":orderId",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "orderId",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Purchase order status updated successfully",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/procurement/purchase-orders/:orderId/status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"procurement",
+																"purchase-orders",
+																":orderId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "orderId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<uuid>\",\n  \"vendorId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ],\n  \"status\": \"delivered\",\n  \"total\": \"<float>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"statusHistory\": [\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    }\n  ]\n}"
+												},
+												{
+													"name": "Invalid status transition",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/procurement/purchase-orders/:orderId/status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"procurement",
+																"purchase-orders",
+																":orderId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "orderId"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\",\n  \"validTransitions\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+												},
+												{
+													"name": "Purchase order not found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/procurement/purchase-orders/:orderId/status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"procurement",
+																"purchase-orders",
+																":orderId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "orderId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Get a specific purchase order",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/procurement/purchase-orders/:orderId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"procurement",
+												"purchase-orders",
+												":orderId"
+											],
+											"variable": [
+												{
+													"key": "orderId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Purchase order details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/procurement/purchase-orders/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"procurement",
+														"purchase-orders",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"vendorId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ],\n  \"status\": \"delivered\",\n  \"total\": \"<float>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"statusHistory\": [\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Purchase order not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/procurement/purchase-orders/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"procurement",
+														"purchase-orders",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all purchase orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/procurement/purchase-orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"procurement",
+										"purchase-orders"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of purchase orders",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/procurement/purchase-orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"procurement",
+												"purchase-orders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"vendorId\": \"<uuid>\",\n    \"date\": \"<date>\",\n    \"items\": [\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      },\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      }\n    ],\n    \"status\": \"partial\",\n    \"total\": \"<float>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"statusHistory\": [\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      },\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"vendorId\": \"<uuid>\",\n    \"date\": \"<date>\",\n    \"items\": [\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      },\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      }\n    ],\n    \"status\": \"pending\",\n    \"total\": \"<float>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"statusHistory\": [\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      },\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new purchase order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"vendorId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/procurement/purchase-orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"procurement",
+										"purchase-orders"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Purchase order created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"vendorId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/procurement/purchase-orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"procurement",
+												"purchase-orders"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"vendorId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ],\n  \"status\": \"delivered\",\n  \"total\": \"<float>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"statusHistory\": [\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Vendor not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"vendorId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/procurement/purchase-orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"procurement",
+												"purchase-orders"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sales",
+			"item": [
+				{
+					"name": "customers",
+					"item": [
+						{
+							"name": "{customerId}",
+							"item": [
+								{
+									"name": "Get a specific customer",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sales/customers/:customerId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sales",
+												"customers",
+												":customerId"
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Customer details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sales/customers/:customerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sales",
+														"customers",
+														":customerId"
+													],
+													"variable": [
+														{
+															"key": "customerId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Customer not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sales/customers/:customerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sales",
+														"customers",
+														":customerId"
+													],
+													"variable": [
+														{
+															"key": "customerId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all customers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sales/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sales",
+										"customers"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of customers",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sales/customers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sales",
+												"customers"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"contact\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"contact\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new customer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sales/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sales",
+										"customers"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Customer created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sales/customers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sales",
+												"customers"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"contact\": \"<string>\",\n  \"email\": \"<email>\",\n  \"phone\": \"<string>\",\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "{orderId}",
+							"item": [
+								{
+									"name": "status",
+									"item": [
+										{
+											"name": "Update the status of a sales order",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/sales/orders/:orderId/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sales",
+														"orders",
+														":orderId",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "orderId",
+															"value": "<uuid>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Sales order status updated successfully",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/sales/orders/:orderId/status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"sales",
+																"orders",
+																":orderId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "orderId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<uuid>\",\n  \"customerId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ],\n  \"status\": \"refunded\",\n  \"total\": \"<float>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"statusHistory\": [\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    }\n  ]\n}"
+												},
+												{
+													"name": "Invalid status transition",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/sales/orders/:orderId/status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"sales",
+																"orders",
+																":orderId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "orderId"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\",\n  \"validTransitions\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+												},
+												{
+													"name": "Sales order not found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"status\": \"cancelled\",\n  \"user\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/sales/orders/:orderId/status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"sales",
+																"orders",
+																":orderId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "orderId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"message\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Get a specific sales order",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sales/orders/:orderId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sales",
+												"orders",
+												":orderId"
+											],
+											"variable": [
+												{
+													"key": "orderId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Sales order details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sales/orders/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sales",
+														"orders",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"customerId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ],\n  \"status\": \"refunded\",\n  \"total\": \"<float>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"statusHistory\": [\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Sales order not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sales/orders/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sales",
+														"orders",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all sales orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sales/orders?customerId=<uuid>&status=delivered",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sales",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "<uuid>"
+										},
+										{
+											"key": "status",
+											"value": "delivered"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of sales orders",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sales/orders?customerId=<uuid>&status=delivered",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sales",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "customerId",
+													"value": "<uuid>"
+												},
+												{
+													"key": "status",
+													"value": "delivered"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"customerId\": \"<uuid>\",\n    \"date\": \"<date>\",\n    \"items\": [\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      },\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      }\n    ],\n    \"status\": \"completed\",\n    \"total\": \"<float>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"statusHistory\": [\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      },\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"customerId\": \"<uuid>\",\n    \"date\": \"<date>\",\n    \"items\": [\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      },\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      }\n    ],\n    \"status\": \"shipped\",\n    \"total\": \"<float>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"statusHistory\": [\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      },\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new sales order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customerId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sales/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sales",
+										"orders"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Sales order created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customerId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sales/orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sales",
+												"orders"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"customerId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ],\n  \"status\": \"refunded\",\n  \"total\": \"<float>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"statusHistory\": [\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    },\n    {\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"user\": \"<string>\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Customer not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customerId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    },\n    {\n      \"itemName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"unitPrice\": \"<float>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sales/orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sales",
+												"orders"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "finance",
+			"item": [
+				{
+					"name": "transactions",
+					"item": [
+						{
+							"name": "{transactionId}",
+							"item": [
+								{
+									"name": "Get a specific transaction",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/finance/transactions/:transactionId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"finance",
+												"transactions",
+												":transactionId"
+											],
+											"variable": [
+												{
+													"key": "transactionId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Transaction details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/finance/transactions/:transactionId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"finance",
+														"transactions",
+														":transactionId"
+													],
+													"variable": [
+														{
+															"key": "transactionId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"type\": \"expense\",\n  \"amount\": \"<float>\",\n  \"date\": \"<date>\",\n  \"description\": \"<string>\",\n  \"reference\": \"<string>\",\n  \"account\": \"<string>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Transaction not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/finance/transactions/:transactionId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"finance",
+														"transactions",
+														":transactionId"
+													],
+													"variable": [
+														{
+															"key": "transactionId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all financial transactions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/finance/transactions?type=expense&account=<string>&startDate=<date>&endDate=<date>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"finance",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "expense"
+										},
+										{
+											"key": "account",
+											"value": "<string>"
+										},
+										{
+											"key": "startDate",
+											"value": "<date>"
+										},
+										{
+											"key": "endDate",
+											"value": "<date>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of transactions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/finance/transactions?type=expense&account=<string>&startDate=<date>&endDate=<date>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"finance",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "expense"
+												},
+												{
+													"key": "account",
+													"value": "<string>"
+												},
+												{
+													"key": "startDate",
+													"value": "<date>"
+												},
+												{
+													"key": "endDate",
+													"value": "<date>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"type\": \"expense\",\n    \"amount\": \"<float>\",\n    \"date\": \"<date>\",\n    \"description\": \"<string>\",\n    \"reference\": \"<string>\",\n    \"account\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"type\": \"income\",\n    \"amount\": \"<float>\",\n    \"date\": \"<date>\",\n    \"description\": \"<string>\",\n    \"reference\": \"<string>\",\n    \"account\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new financial transaction",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"income\",\n  \"amount\": \"<float>\",\n  \"account\": \"<string>\",\n  \"description\": \"<string>\",\n  \"reference\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/finance/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"finance",
+										"transactions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Transaction created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"income\",\n  \"amount\": \"<float>\",\n  \"account\": \"<string>\",\n  \"description\": \"<string>\",\n  \"reference\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/finance/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"finance",
+												"transactions"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transaction\": {\n    \"id\": \"<uuid>\",\n    \"type\": \"expense\",\n    \"amount\": \"<float>\",\n    \"date\": \"<date>\",\n    \"description\": \"<string>\",\n    \"reference\": \"<string>\",\n    \"account\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  \"account\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"type\": \"liability\",\n    \"balance\": \"<float>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n}"
+								},
+								{
+									"name": "Account not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"income\",\n  \"amount\": \"<float>\",\n  \"account\": \"<string>\",\n  \"description\": \"<string>\",\n  \"reference\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/finance/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"finance",
+												"transactions"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "accounts",
+					"item": [
+						{
+							"name": "List all financial accounts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/finance/accounts?type=asset",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"finance",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "asset"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of accounts",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/finance/accounts?type=asset",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"finance",
+												"accounts"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "asset"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"type\": \"asset\",\n    \"balance\": \"<float>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"type\": \"asset\",\n    \"balance\": \"<float>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new financial account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"expense\",\n  \"initialBalance\": \"<float>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/finance/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"finance",
+										"accounts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Account created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"expense\",\n  \"initialBalance\": \"<float>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/finance/accounts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"finance",
+												"accounts"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"type\": \"income\",\n  \"balance\": \"<float>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Account with this name already exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"expense\",\n  \"initialBalance\": \"<float>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/finance/accounts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"finance",
+												"accounts"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "hr",
+			"item": [
+				{
+					"name": "employees",
+					"item": [
+						{
+							"name": "{employeeId}",
+							"item": [
+								{
+									"name": "Get a specific employee",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hr/employees/:employeeId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hr",
+												"employees",
+												":employeeId"
+											],
+											"variable": [
+												{
+													"key": "employeeId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Employee details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/hr/employees/:employeeId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hr",
+														"employees",
+														":employeeId"
+													],
+													"variable": [
+														{
+															"key": "employeeId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<email>\",\n  \"position\": \"<string>\",\n  \"department\": \"<string>\",\n  \"hireDate\": \"<date>\",\n  \"salary\": \"<float>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Employee not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/hr/employees/:employeeId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hr",
+														"employees",
+														":employeeId"
+													],
+													"variable": [
+														{
+															"key": "employeeId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all employees",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hr/employees?department=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hr",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "department",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of employees",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hr/employees?department=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hr",
+												"employees"
+											],
+											"query": [
+												{
+													"key": "department",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<email>\",\n    \"position\": \"<string>\",\n    \"department\": \"<string>\",\n    \"hireDate\": \"<date>\",\n    \"salary\": \"<float>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<email>\",\n    \"position\": \"<string>\",\n    \"department\": \"<string>\",\n    \"hireDate\": \"<date>\",\n    \"salary\": \"<float>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new employee",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"position\": \"<string>\",\n  \"department\": \"<string>\",\n  \"salary\": \"<float>\",\n  \"email\": \"<email>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hr/employees",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hr",
+										"employees"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Employee created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"position\": \"<string>\",\n  \"department\": \"<string>\",\n  \"salary\": \"<float>\",\n  \"email\": \"<email>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hr/employees",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hr",
+												"employees"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<email>\",\n  \"position\": \"<string>\",\n  \"department\": \"<string>\",\n  \"hireDate\": \"<date>\",\n  \"salary\": \"<float>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "payroll",
+					"item": [
+						{
+							"name": "run",
+							"item": [
+								{
+									"name": "Run a new payroll process",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"period\": \"<string>\",\n  \"taxRate\": \"<float>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hr/payroll/run",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hr",
+												"payroll",
+												"run"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Payroll processed successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"period\": \"<string>\",\n  \"taxRate\": \"<float>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/hr/payroll/run",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hr",
+														"payroll",
+														"run"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"period\": \"<string>\",\n  \"processedDate\": \"<dateTime>\",\n  \"employees\": [\n    {\n      \"employeeId\": \"<uuid>\",\n      \"grossAmount\": \"<float>\",\n      \"taxes\": \"<float>\",\n      \"netAmount\": \"<float>\"\n    },\n    {\n      \"employeeId\": \"<uuid>\",\n      \"grossAmount\": \"<float>\",\n      \"taxes\": \"<float>\",\n      \"netAmount\": \"<float>\"\n    }\n  ],\n  \"status\": \"processed\",\n  \"totalGross\": \"<float>\",\n  \"totalTaxes\": \"<float>\",\n  \"totalNet\": \"<float>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Payroll for this period already exists",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"period\": \"<string>\",\n  \"taxRate\": \"<float>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/hr/payroll/run",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hr",
+														"payroll",
+														"run"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get payroll information",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hr/payroll?period=<string>&status=processed",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hr",
+										"payroll"
+									],
+									"query": [
+										{
+											"key": "period",
+											"value": "<string>"
+										},
+										{
+											"key": "status",
+											"value": "processed"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of payroll records",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hr/payroll?period=<string>&status=processed",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hr",
+												"payroll"
+											],
+											"query": [
+												{
+													"key": "period",
+													"value": "<string>"
+												},
+												{
+													"key": "status",
+													"value": "processed"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"period\": \"<string>\",\n    \"processedDate\": \"<dateTime>\",\n    \"employees\": [\n      {\n        \"employeeId\": \"<uuid>\",\n        \"grossAmount\": \"<float>\",\n        \"taxes\": \"<float>\",\n        \"netAmount\": \"<float>\"\n      },\n      {\n        \"employeeId\": \"<uuid>\",\n        \"grossAmount\": \"<float>\",\n        \"taxes\": \"<float>\",\n        \"netAmount\": \"<float>\"\n      }\n    ],\n    \"status\": \"paid\",\n    \"totalGross\": \"<float>\",\n    \"totalTaxes\": \"<float>\",\n    \"totalNet\": \"<float>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"period\": \"<string>\",\n    \"processedDate\": \"<dateTime>\",\n    \"employees\": [\n      {\n        \"employeeId\": \"<uuid>\",\n        \"grossAmount\": \"<float>\",\n        \"taxes\": \"<float>\",\n        \"netAmount\": \"<float>\"\n      },\n      {\n        \"employeeId\": \"<uuid>\",\n        \"grossAmount\": \"<float>\",\n        \"taxes\": \"<float>\",\n        \"netAmount\": \"<float>\"\n      }\n    ],\n    \"status\": \"paid\",\n    \"totalGross\": \"<float>\",\n    \"totalTaxes\": \"<float>\",\n    \"totalNet\": \"<float>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "manufacturing",
+			"item": [
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "{productionOrderId}",
+							"item": [
+								{
+									"name": "Get a specific production order",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/manufacturing/orders/:productionOrderId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"manufacturing",
+												"orders",
+												":productionOrderId"
+											],
+											"variable": [
+												{
+													"key": "productionOrderId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Production order details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/manufacturing/orders/:productionOrderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"manufacturing",
+														"orders",
+														":productionOrderId"
+													],
+													"variable": [
+														{
+															"key": "productionOrderId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"product\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"startDate\": \"<date>\",\n  \"dueDate\": \"<date>\",\n  \"status\": \"completed\",\n  \"completedQuantity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"materialRequests\": [\n    {\n      \"id\": \"<uuid>\",\n      \"productionOrderId\": \"<uuid>\",\n      \"date\": \"<date>\",\n      \"items\": [\n        {\n          \"material\": \"<string>\",\n          \"quantity\": \"<integer>\"\n        },\n        {\n          \"material\": \"<string>\",\n          \"quantity\": \"<integer>\"\n        }\n      ],\n      \"status\": \"pending\",\n      \"createdAt\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"productionOrderId\": \"<uuid>\",\n      \"date\": \"<date>\",\n      \"items\": [\n        {\n          \"material\": \"<string>\",\n          \"quantity\": \"<integer>\"\n        },\n        {\n          \"material\": \"<string>\",\n          \"quantity\": \"<integer>\"\n        }\n      ],\n      \"status\": \"cancelled\",\n      \"createdAt\": \"<dateTime>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Production order not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/manufacturing/orders/:productionOrderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"manufacturing",
+														"orders",
+														":productionOrderId"
+													],
+													"variable": [
+														{
+															"key": "productionOrderId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all production orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/manufacturing/orders?status=in-progress&product=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"manufacturing",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "in-progress"
+										},
+										{
+											"key": "product",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of production orders",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/manufacturing/orders?status=in-progress&product=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"manufacturing",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "in-progress"
+												},
+												{
+													"key": "product",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"product\": \"<string>\",\n    \"quantity\": \"<integer>\",\n    \"startDate\": \"<date>\",\n    \"dueDate\": \"<date>\",\n    \"status\": \"cancelled\",\n    \"completedQuantity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"product\": \"<string>\",\n    \"quantity\": \"<integer>\",\n    \"startDate\": \"<date>\",\n    \"dueDate\": \"<date>\",\n    \"status\": \"in-progress\",\n    \"completedQuantity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new production order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"product\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"dueDate\": \"<date>\",\n  \"startDate\": \"<date>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/manufacturing/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"manufacturing",
+										"orders"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Production order created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"product\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"dueDate\": \"<date>\",\n  \"startDate\": \"<date>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/manufacturing/orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"manufacturing",
+												"orders"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"product\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"startDate\": \"<date>\",\n  \"dueDate\": \"<date>\",\n  \"status\": \"cancelled\",\n  \"completedQuantity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "material-requests",
+					"item": [
+						{
+							"name": "{requestId}",
+							"item": [
+								{
+									"name": "Get a specific material request",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/manufacturing/material-requests/:requestId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"manufacturing",
+												"material-requests",
+												":requestId"
+											],
+											"variable": [
+												{
+													"key": "requestId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Material request details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/manufacturing/material-requests/:requestId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"manufacturing",
+														"material-requests",
+														":requestId"
+													],
+													"variable": [
+														{
+															"key": "requestId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"productionOrderId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"status\": \"pending\",\n  \"createdAt\": \"<dateTime>\",\n  \"productionOrder\": {\n    \"id\": \"<uuid>\",\n    \"product\": \"<string>\",\n    \"quantity\": \"<integer>\",\n    \"startDate\": \"<date>\",\n    \"dueDate\": \"<date>\",\n    \"status\": \"completed\",\n    \"completedQuantity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n}"
+										},
+										{
+											"name": "Material request not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/manufacturing/material-requests/:requestId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"manufacturing",
+														"material-requests",
+														":requestId"
+													],
+													"variable": [
+														{
+															"key": "requestId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Create a material request for production",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productionOrderId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/manufacturing/material-requests",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"manufacturing",
+										"material-requests"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Material request created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productionOrderId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/manufacturing/material-requests",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"manufacturing",
+												"material-requests"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"productionOrderId\": \"<uuid>\",\n  \"date\": \"<date>\",\n  \"items\": [\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"status\": \"fulfilled\",\n  \"createdAt\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Production order not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productionOrderId\": \"<uuid>\",\n  \"items\": [\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"material\": \"<string>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/manufacturing/material-requests",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"manufacturing",
+												"material-requests"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "logistics",
+			"item": [
+				{
+					"name": "shipments",
+					"item": [
+						{
+							"name": "{shipmentId}",
+							"item": [
+								{
+									"name": "Get a specific shipment",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/logistics/shipments/:shipmentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"logistics",
+												"shipments",
+												":shipmentId"
+											],
+											"variable": [
+												{
+													"key": "shipmentId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Shipment details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/logistics/shipments/:shipmentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"logistics",
+														"shipments",
+														":shipmentId"
+													],
+													"variable": [
+														{
+															"key": "shipmentId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"orderId\": \"<uuid>\",\n  \"carrier\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"shippingDate\": \"<date>\",\n  \"estimatedDelivery\": \"<date>\",\n  \"status\": \"cancelled\",\n  \"type\": \"order-fulfillment\",\n  \"source\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"order\": {\n    \"id\": \"<uuid>\",\n    \"customerId\": \"<uuid>\",\n    \"date\": \"<date>\",\n    \"items\": [\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      },\n      {\n        \"itemName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"unitPrice\": \"<float>\"\n      }\n    ],\n    \"status\": \"pending\",\n    \"total\": \"<float>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"statusHistory\": [\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      },\n      {\n        \"status\": \"<string>\",\n        \"timestamp\": \"<dateTime>\",\n        \"user\": \"<string>\"\n      }\n    ]\n  }\n}"
+										},
+										{
+											"name": "Shipment not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/logistics/shipments/:shipmentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"logistics",
+														"shipments",
+														":shipmentId"
+													],
+													"variable": [
+														{
+															"key": "shipmentId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "List all shipments",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/logistics/shipments?status=pending&carrier=<string>&orderId=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"logistics",
+										"shipments"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										},
+										{
+											"key": "carrier",
+											"value": "<string>"
+										},
+										{
+											"key": "orderId",
+											"value": "<uuid>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List of shipments",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/logistics/shipments?status=pending&carrier=<string>&orderId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"logistics",
+												"shipments"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "pending"
+												},
+												{
+													"key": "carrier",
+													"value": "<string>"
+												},
+												{
+													"key": "orderId",
+													"value": "<uuid>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"orderId\": \"<uuid>\",\n    \"carrier\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"shippingDate\": \"<date>\",\n    \"estimatedDelivery\": \"<date>\",\n    \"status\": \"pending\",\n    \"type\": \"inventory-transfer\",\n    \"source\": \"<string>\",\n    \"destination\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"orderId\": \"<uuid>\",\n    \"carrier\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"shippingDate\": \"<date>\",\n    \"estimatedDelivery\": \"<date>\",\n    \"status\": \"pending\",\n    \"type\": \"inventory-transfer\",\n    \"source\": \"<string>\",\n    \"destination\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create a new shipment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"carrier\": \"<string>\",\n  \"orderId\": \"<uuid>\",\n  \"type\": \"inventory-transfer\",\n  \"source\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"shippingDate\": \"<date>\",\n  \"estimatedDelivery\": \"<date>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/logistics/shipments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"logistics",
+										"shipments"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Shipment created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"carrier\": \"<string>\",\n  \"orderId\": \"<uuid>\",\n  \"type\": \"inventory-transfer\",\n  \"source\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"shippingDate\": \"<date>\",\n  \"estimatedDelivery\": \"<date>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/logistics/shipments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"logistics",
+												"shipments"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"shipment\": {\n    \"id\": \"<uuid>\",\n    \"orderId\": \"<uuid>\",\n    \"carrier\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"shippingDate\": \"<date>\",\n    \"estimatedDelivery\": \"<date>\",\n    \"status\": \"delivered\",\n    \"type\": \"order-fulfillment\",\n    \"source\": \"<string>\",\n    \"destination\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  \"tracking\": {\n    \"shipmentId\": \"<uuid>\",\n    \"events\": [\n      {\n        \"timestamp\": \"<dateTime>\",\n        \"location\": \"<string>\",\n        \"status\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      {\n        \"timestamp\": \"<dateTime>\",\n        \"location\": \"<string>\",\n        \"status\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    ]\n  }\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"carrier\": \"<string>\",\n  \"orderId\": \"<uuid>\",\n  \"type\": \"inventory-transfer\",\n  \"source\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"shippingDate\": \"<date>\",\n  \"estimatedDelivery\": \"<date>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/logistics/shipments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"logistics",
+												"shipments"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Order not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"carrier\": \"<string>\",\n  \"orderId\": \"<uuid>\",\n  \"type\": \"inventory-transfer\",\n  \"source\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"shippingDate\": \"<date>\",\n  \"estimatedDelivery\": \"<date>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/logistics/shipments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"logistics",
+												"shipments"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "tracking",
+					"item": [
+						{
+							"name": "{shipmentId}",
+							"item": [
+								{
+									"name": "Get tracking information for a shipment",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/logistics/tracking/:shipmentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"logistics",
+												"tracking",
+												":shipmentId"
+											],
+											"variable": [
+												{
+													"key": "shipmentId",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Tracking information",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/logistics/tracking/:shipmentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"logistics",
+														"tracking",
+														":shipmentId"
+													],
+													"variable": [
+														{
+															"key": "shipmentId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"shipment\": {\n    \"id\": \"<uuid>\",\n    \"orderId\": \"<uuid>\",\n    \"carrier\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"shippingDate\": \"<date>\",\n    \"estimatedDelivery\": \"<date>\",\n    \"status\": \"delivered\",\n    \"type\": \"inventory-transfer\",\n    \"source\": \"<string>\",\n    \"destination\": \"<string>\",\n    \"createdAt\": \"<dateTime>\"\n  },\n  \"events\": [\n    {\n      \"timestamp\": \"<dateTime>\",\n      \"location\": \"<string>\",\n      \"status\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"timestamp\": \"<dateTime>\",\n      \"location\": \"<string>\",\n      \"status\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Shipment or tracking information not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/logistics/tracking/:shipmentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"logistics",
+														"tracking",
+														":shipmentId"
+													],
+													"variable": [
+														{
+															"key": "shipmentId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "system",
+			"item": [
+				{
+					"name": "health",
+					"item": [
+						{
+							"name": "Get system health status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/system/health",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"system",
+										"health"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "System health information",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/system/health",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"system",
+												"health"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"healthy\",\n  \"services\": [\n    {\n      \"name\": \"<string>\",\n      \"status\": \"degraded\",\n      \"uptime\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"status\": \"running\",\n      \"uptime\": \"<string>\"\n    }\n  ],\n  \"metrics\": {\n    \"cpu\": \"<string>\",\n    \"memory\": \"<string>\",\n    \"disk\": \"<string>\",\n    \"requests\": {\n      \"total\": \"<integer>\",\n      \"perMinute\": \"<integer>\"\n    },\n    \"responseTime\": {\n      \"average\": \"<string>\",\n      \"p95\": \"<string>\",\n      \"p99\": \"<string>\"\n    }\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "version",
+					"item": [
+						{
+							"name": "Get system version information",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/system/version",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"system",
+										"version"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "System version information",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/system/version",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"system",
+												"version"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"current\": \"<string>\",\n  \"lastUpdated\": \"<date>\",\n  \"details\": [\n    {\n      \"component\": \"<string>\",\n      \"version\": \"<string>\"\n    },\n    {\n      \"component\": \"<string>\",\n      \"version\": \"<string>\"\n    }\n  ],\n  \"changelog\": {\n    \"exercitationb\": \"<string>\",\n    \"quis4\": \"<string>\",\n    \"consequat__0\": \"<string>\",\n    \"seda\": \"<string>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		}
+	]
+}

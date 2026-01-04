@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "auth-service"
+		},
+		{
+			"path": "start"
+		},
+		{
+			"path": "api-gateway"
+		},
+		{
+			"path": "integration-service"
+		},
+		{
+			"path": "workflow-service"
+		},
+		{
+			"path": "integration-chunker"
+		},
+		{
+			"path": "integration-chunker-pro"
+		}
+	],
+	"settings": {}
+}

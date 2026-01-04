@@ -1,0 +1,53 @@
+import requests
+import mysql.connector
+
+# Database credentials
+host = ''
+user = ''
+password = ''
+database = ''
+port = 
+
+# Create a database connection
+mydb = mysql.connector.connect(
+    host=host,
+    user=user,
+    password=password,
+    database=database,
+    port=port
+)
+
+# Create a cursor object
+mycursor = mydb.cursor()
+
+# Create the table if it doesn't exist
+mycursor.execute("""
+CREATE TABLE IF NOT EXISTS posts (
+    id INT PRIMARY KEY,
+    userId INT,
+    title VARCHAR(255),
+    body TEXT
+);
+""")
+
+# Fetch and store the first 10 posts
+for i in range(1, 11):
+    # Get the post data
+    url = f"https://jsonplaceholder.typicode.com/posts/{i}"
+    response = requests.get(url)
+    post_data = response.json()
+
+    # Insert the post data into the database
+    sql = "INSERT INTO posts (id, userId, title, body) VALUES (%s, %s, %s, %s)"
+    val = (post_data['id'], post_data['userId'], post_data['title'], post_data['body'])
+    mycursor.execute(sql, val)
+
+# Commit the changes
+mydb.commit()
+
+# Print confirmation message
+print("Data inserted successfully.")
+
+# Close the cursor and database connection
+mycursor.close()
+mydb.close()

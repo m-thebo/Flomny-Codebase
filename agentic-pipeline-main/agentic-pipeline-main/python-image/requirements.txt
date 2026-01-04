@@ -1,0 +1,9 @@
+# Update this as needed
+requests
+urllib3
+beautifulsoup4
+pymysql
+sqlalchemy
+pandas
+numpy
+mysql-connector-python

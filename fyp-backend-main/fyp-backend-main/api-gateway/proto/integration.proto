@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package integration;
+option go_package = "github.com/multiagentai/backend/integration-service";
+
+
+import "google/protobuf/timestamp.proto";
+
+message Integration {
+    string id = 1;
+    string displayName = 2;
+    string uniqueName = 3;
+    string description = 4;
+    string file_url = 5; 
+    string createdBy = 6; 
+    bool public = 7;
+    google.protobuf.Timestamp createdAt = 8;
+    google.protobuf.Timestamp updatedAt = 9;
+    google.protobuf.Timestamp deletedAt = 10;
+}
+
+message CreateIntegrationRequest {
+    string displayName = 1;
+    string uniqueName = 2;
+    string description = 3;
+    string file_url = 4;
+    string createdBy = 5;
+    bool public = 6;
+}
+
+message CreateIntegrationResponse {
+    Integration integration = 1;
+}
+
+message DeleteIntegrationRequest {
+    string id = 1;
+}
+
+message DeleteIntegrationResponse {
+    bool success = 1;
+}
+
+message GetUserIntegrationsRequest {}
+
+message GetUserIntegrationsResponse {
+    repeated Integration integrations = 1;
+}
+
+message SearchIntegrationRequest {
+    string query = 1;
+}
+
+message SearchIntegrationResponse {
+    repeated Integration integrations = 1;
+}
+
+message UpdateIntegrationRequest {
+    string displayName = 1;
+    string uniqueName = 2;
+    string description = 3;
+}
+
+message UpdateIntegrationResponse {
+    Integration integration = 1;
+}
+
+service IntegrationService {
+    rpc CreateIntegration(CreateIntegrationRequest) returns (CreateIntegrationResponse);
+    rpc DeleteIntegration(DeleteIntegrationRequest) returns (DeleteIntegrationResponse);
+    rpc GetUserIntegrations(GetUserIntegrationsRequest) returns (GetUserIntegrationsResponse);
+    rpc SearchIntegration(SearchIntegrationRequest) returns (SearchIntegrationResponse);
+    rpc UpdateIntegration(UpdateIntegrationRequest) returns (UpdateIntegrationResponse);
+}

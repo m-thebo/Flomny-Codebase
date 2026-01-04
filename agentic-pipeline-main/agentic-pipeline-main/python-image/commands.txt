@@ -1,0 +1,2 @@
+docker build -t shehzadaslamoza/multiagent-python .
+docker push shehzadaslamoza/multiagent-python

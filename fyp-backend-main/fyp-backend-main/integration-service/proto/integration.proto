@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package integration;
+option go_package = "github.com/multiagentai/backend/integration-service";
+
+
+import "google/protobuf/timestamp.proto";
+
+message Integration {
+    string id = 1;
+    string displayName = 2;
+    bool public = 3;
+    string uniqueName = 4;
+    string description = 5;
+    string createdBy = 6;
+    AdditionalInfo additionalInfo = 7;
+    google.protobuf.Timestamp createdAt = 8;
+    google.protobuf.Timestamp updatedAt = 9;
+    google.protobuf.Timestamp deletedAt = 10;
+}
+
+message AdditionalInfo {
+    bool isFileBased = 1;
+    string fileStatus = 2;
+    string failedReason = 3;
+    string publicBaseURL = 4;
+    string documentationURL = 5;
+    bool isLocallyStored = 6;
+}
+
+message CreateIntegrationRequest {
+    string displayName = 1;
+    string uniqueName = 2;
+    string description = 3;
+    string documentation_url = 4;
+    bool is_locally_stored = 5;
+    string base_url = 6;
+    string createdBy = 7;
+    bool public = 8;
+}
+
+message CreateIntegrationResponse {
+    Integration integration = 1;
+}
+
+message DeleteIntegrationRequest {
+    string id = 1;
+}
+
+message DeleteIntegrationResponse {
+    bool success = 1;
+}
+
+message GetUserIntegrationsRequest {}
+
+message GetUserIntegrationsResponse {
+    repeated Integration integrations = 1;
+}
+
+message SearchIntegrationRequest {
+    string query = 1;
+}
+
+message SearchIntegrationResponse {
+    repeated Integration integrations = 1;
+}
+
+message UpdateIntegrationRequest {
+    string id = 1;
+    string displayName = 2;
+    string uniqueName = 3;
+    string description = 4;
+    string documentationURL = 5;
+    bool isLocallyStored = 6;
+    string publicBaseURL = 7;
+    bool public = 8;
+}
+
+message UpdateIntegrationResponse {
+    Integration integration = 1;
+}
+
+message GetPaginatedCommunityIntegrationsRequest {
+    int32 offset = 1;
+    int32 limit = 2;
+}
+
+message GetPaginatedCommunityIntegrationsResponse {
+    repeated Integration integrations = 1;
+    int32 total = 2;
+}
+
+service IntegrationService {
+    rpc CreateIntegration(CreateIntegrationRequest) returns (CreateIntegrationResponse);
+    rpc DeleteIntegration(DeleteIntegrationRequest) returns (DeleteIntegrationResponse);
+    rpc GetUserIntegrations(GetUserIntegrationsRequest) returns (GetUserIntegrationsResponse);
+    rpc SearchIntegration(SearchIntegrationRequest) returns (SearchIntegrationResponse);
+    rpc UpdateIntegration(UpdateIntegrationRequest) returns (UpdateIntegrationResponse);
+    rpc GetPaginatedCommunityIntegrations(GetPaginatedCommunityIntegrationsRequest) returns (GetPaginatedCommunityIntegrationsResponse);
+}

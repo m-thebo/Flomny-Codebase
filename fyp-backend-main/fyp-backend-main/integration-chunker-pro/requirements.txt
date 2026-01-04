@@ -1,0 +1,7 @@
+redis
+boto3
+pyyaml
+langchain_openai
+langchain_pinecone
+langchain
+dotenv

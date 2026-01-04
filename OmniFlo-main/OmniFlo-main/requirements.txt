@@ -1,0 +1,6 @@
+langgraph~=0.3.6
+langchain-openai~=0.3.8
+langchain-google-genai~=2.0.11
+langchain-core~=0.3.43
+typing_extensions~=4.12.2
+pydantic~=2.10.6

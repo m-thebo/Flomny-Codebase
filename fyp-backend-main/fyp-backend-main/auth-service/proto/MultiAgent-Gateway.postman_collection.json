@@ -1,0 +1,956 @@
+{
+	"info": {
+		"_postman_id": "528bec29-2143-4560-a5a8-56924abe7e4c",
+		"name": "MultiAgent-Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40779145",
+		"_collection_link": "https://multiagent-fyp.postman.co/workspace/MultiAgent-FYP-Workspace~f0657136-3a4c-4d04-8643-ece2c08dfd71/collection/40779145-528bec29-2143-4560-a5a8-56924abe7e4c?action=share&source=collection_link&creator=40779145"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"muhammadammarzia@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"muhammadammarzia@gmail.com\",\r\n    \"password\": \"123455464\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Jan 2025 16:08:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY2OTgxMzYsInN1YiI6IjY3NzkyNDlhOGM0MGNiMzBlMThlZjk5YiJ9.0O_c2uJg0saIlK0fAjzFXtsu9xe6EDeVZV58IwwGj3I\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"muhammadammarzia@gmail.com\",\r\n    \"firstname\": \"Ammar\",\r\n    \"lastname\": \"Khatri\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"muhammadammarzia@gmail.com\",\r\n    \"firstname\": \"Ammar\",\r\n    \"lastname\": \"Khatri\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Jan 2025 16:31:08 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "457"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY2OTk0NjgsInN1YiI6IjY3ODI5Y2NjMDFhMjlhMjAyZWYyZTdlYyJ9.RoLy4EFALM8b0hCveRHldVIwhq_VePruLsCBbNZcyxU\",\n        \"user\": {\n            \"id\": \"67829ccc01a29a202ef2e7ec\",\n            \"firstname\": \"Ammar\",\n            \"lastname\": \"Khatri\",\n            \"email\": \"muhammadammarzia@gmail.com\",\n            \"signin_method\": \"local\",\n            \"createdAt\": {\n                \"seconds\": 1736613068,\n                \"nanos\": 88680891\n            },\n            \"updatedAt\": {\n                \"seconds\": 1736613068,\n                \"nanos\": 88680926\n            },\n            \"deletedAt\": {\n                \"seconds\": -62135596800\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/auth/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Jan 2025 18:22:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "273"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"user\": {\n            \"id\": \"67829ccc01a29a202ef2e7ec\",\n            \"firstname\": \"Ammar\",\n            \"lastname\": \"Khatri\",\n            \"email\": \"muhammadammarzia@gmail.com\",\n            \"createdAt\": {\n                \"seconds\": 1736613068,\n                \"nanos\": 88000000\n            },\n            \"updatedAt\": {\n                \"seconds\": 1736613068,\n                \"nanos\": 88000000\n            },\n            \"deletedAt\": {\n                \"seconds\": -62135596800\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"muhammadammarzia@gmail.com\",\r\n    \"firstname\": \"Ammar\",\r\n    \"lastname\": \"Khatri\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"muhammadammarzia@gmail.com\",\r\n    \"firstname\": \"Ammar\",\r\n    \"lastname\": \"Khatri\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Jan 2025 18:50:21 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"user\": {\n            \"id\": \"67829ccc01a29a202ef2e7ec\",\n            \"firstname\": \"Ammar\",\n            \"lastname\": \"Khatri\",\n            \"email\": \"muhammadammarzia@gmail.com\",\n            \"signin_method\": \"local\",\n            \"createdAt\": {\n                \"seconds\": 1736613068,\n                \"nanos\": 88000000\n            },\n            \"updatedAt\": {\n                \"seconds\": 1736621409,\n                \"nanos\": 747000000\n            },\n            \"deletedAt\": {\n                \"seconds\": -62135596800\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/fyp/backend/auth-service/proto/auth.proto"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/docs/{{bucket_name}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"docs",
+								"{{bucket_name}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload File",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/fyp/backend/auth-service/proto/auth.proto"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/docs/{{bucket_name}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"docs",
+										"{{bucket_name}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jan 2025 12:06:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"file_url\": \"http://localhost:8000/docs/integrations/1f829212-5623-4aec-9c2a-9f664f7ca960-auth.proto\",\n    \"message\": \"File uploaded successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/docs/{{bucket_name}}/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"docs",
+								"{{bucket_name}}",
+								"157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get File",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/docs/{{bucket_name}}/1f829212-5623-4aec-9c2a-9f664f7ca960-auth.proto",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"docs",
+										"{{bucket_name}}",
+										"1f829212-5623-4aec-9c2a-9f664f7ca960-auth.proto"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Content-Disposition",
+									"value": "inline; filename=1f829212-5623-4aec-9c2a-9f664f7ca960-auth.proto"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1727"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jan 2025 12:07:15 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "syntax = \"proto3\";\r\n\r\npackage auth;\r\noption go_package = \"github.com/multiagentai/backend/auth-service\";\r\nimport \"google/protobuf/timestamp.proto\";\r\n\r\nmessage User {\r\n    string id = 1;\r\n    string firstname = 2;\r\n    string lastname = 3;\r\n    string email = 4;\r\n    string password = 5;\r\n    string signin_method = 6;\r\n    int64 credits = 7;\r\n    google.protobuf.Timestamp createdAt = 8;\r\n    google.protobuf.Timestamp updatedAt = 9;\r\n    google.protobuf.Timestamp deletedAt = 10;\r\n}\r\n\r\nmessage LoginRequest {\r\n    string email = 1;\r\n    string password = 2;\r\n}\r\n\r\nmessage LoginResponse {\r\n    string accessToken = 1;\r\n}\r\n\r\nmessage RegisterRequest {\r\n    string firstname = 1;\r\n    string lastname = 2;\r\n    string email = 3;\r\n    string password = 4;\r\n}\r\n\r\nmessage RegisterResponse {\r\n    string token = 1;\r\n    User user = 2;\r\n}\r\n\r\nmessage SocialAuthRequest {\r\n    string token = 1;\r\n}\r\n\r\nmessage SocialAuthResponse {\r\n    string token = 1;\r\n    User user = 2;\r\n}\r\n\r\nmessage GetUserRequest {}\r\n\r\nmessage GetUserResponse {\r\n    User user = 1;\r\n}\r\n\r\nmessage EditUserRequest {\r\n    string firstname = 1;\r\n    string lastname = 2;\r\n    string email = 3;\r\n    string password = 4;\r\n}\r\n\r\nmessage EditUserResponse {\r\n    User user = 1;\r\n}\r\n\r\nmessage DeleteUserRequest {}\r\n\r\nmessage DeleteUserResponse {\r\n    User user = 1;\r\n}\r\n\r\nservice AuthService {\r\n    rpc Login(LoginRequest) returns (LoginResponse);\r\n    rpc Register(RegisterRequest) returns (RegisterResponse);\r\n    rpc SocialAuth(SocialAuthRequest) returns (SocialAuthResponse);\r\n    rpc GetUser(GetUserRequest) returns (GetUserResponse);\r\n    rpc EditUser(EditUserRequest) returns (EditUserResponse);\r\n    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Integration",
+			"item": [
+				{
+					"name": "Create Integration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"displayName\": \"Auth Integration\",\r\n  \"uniqueName\": \"Auth\",\r\n  \"description\": \"This is a sample description for the integration request.\",\r\n  \"file_url\": \"http://localhost:8000/docs/integrations/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto\",\r\n  \"public\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/integration",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"integration"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Integration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"displayName\": \"Auth Integration\",\r\n  \"uniqueName\": \"Auth\",\r\n  \"description\": \"This is a sample description for the integration request.\",\r\n  \"file_url\": \"http://localhost:8000/docs/integrations/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto\",\r\n  \"public\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/integration",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"integration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Jan 2025 19:49:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "435"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"integration\": {\n            \"id\": \"6793eeb62ef1c36bb51534ba\",\n            \"displayName\": \"Auth Integration\",\n            \"uniqueName\": \"auth\",\n            \"description\": \"This is a sample description for the integration request.\",\n            \"file_url\": \"http://localhost:8000/docs/integrations/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto\",\n            \"createdBy\": \"6788207f6dbf90f76815508c\",\n            \"createdAt\": {\n                \"seconds\": 1737748150,\n                \"nanos\": 628913127\n            },\n            \"updatedAt\": {\n                \"seconds\": 1737748150,\n                \"nanos\": 628913163\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User Integrations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/integration/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"integration",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Integrations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/integration/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"integration",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Jan 2025 19:48:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "850"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"integrations\": [\n        {\n            \"id\": \"6788257385c1e45a5b52506f\",\n            \"displayName\": \"Auth Integration\",\n            \"uniqueName\": \"Auth Protobuf\",\n            \"description\": \"This is a sample description for the integration request.\",\n            \"file_url\": \"http://localhost:8000/docs/integrations/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto\",\n            \"createdBy\": \"6788207f6dbf90f76815508c\",\n            \"createdAt\": {\n                \"seconds\": 1736975731,\n                \"nanos\": 660000000\n            },\n            \"updatedAt\": {\n                \"seconds\": 1736975731,\n                \"nanos\": 660000000\n            }\n        },\n        {\n            \"id\": \"6793ee0a2ef1c36bb51534b9\",\n            \"displayName\": \"Auth Integration\",\n            \"uniqueName\": \"auth protobuf\",\n            \"description\": \"This is a sample description for the integration request.\",\n            \"file_url\": \"http://localhost:8000/docs/integrations/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto\",\n            \"createdBy\": \"6788207f6dbf90f76815508c\",\n            \"createdAt\": {\n                \"seconds\": 1737747978,\n                \"nanos\": 981000000\n            },\n            \"updatedAt\": {\n                \"seconds\": 1737747978,\n                \"nanos\": 981000000\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Integration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/integration/6793ee0a2ef1c36bb51534b9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"integration",
+								"6793ee0a2ef1c36bb51534b9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Integration",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/integration/6788257385c1e45a5b52506f",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"integration",
+										"6788257385c1e45a5b52506f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Jan 2025 19:55:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Search Integrations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/integration/search?query=au",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"integration",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "au"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Integrations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/integration/search?query=au",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"integration",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "au"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 17:10:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "425"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"integrations\": [\n        {\n            \"id\": \"6793eeb62ef1c36bb51534ba\",\n            \"displayName\": \"Auth Integration\",\n            \"uniqueName\": \"auth\",\n            \"description\": \"This is a sample description for the integration request.\",\n            \"file_url\": \"http://localhost:8000/docs/integrations/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto\",\n            \"createdBy\": \"6788207f6dbf90f76815508c\",\n            \"createdAt\": {\n                \"seconds\": 1737748150,\n                \"nanos\": 628000000\n            },\n            \"updatedAt\": {\n                \"seconds\": 1737748150,\n                \"nanos\": 628000000\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Integrations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uniqueName\": \"auth\",\r\n    \"description\": \"New description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/integration/6793eeb62ef1c36bb51534ba",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"integration",
+								"6793eeb62ef1c36bb51534ba"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Integration",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"uniqueName\": \"auth\",\r\n    \"description\": \"New description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/integration/6793eeb62ef1c36bb51534ba",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"integration",
+										"6793eeb62ef1c36bb51534ba"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 17:18:32 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "380"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"integration\": {\n        \"id\": \"6793eeb62ef1c36bb51534ba\",\n        \"displayName\": \"Auth Integration\",\n        \"uniqueName\": \"auth\",\n        \"description\": \"New description\",\n        \"file_url\": \"http://localhost:8000/docs/integrations/157ba8c0-fd1a-478f-8e38-0f595c618620-auth.proto\",\n        \"createdBy\": \"6788207f6dbf90f76815508c\",\n        \"createdAt\": {\n            \"seconds\": 1737748150,\n            \"nanos\": 628000000\n        },\n        \"updatedAt\": {\n            \"seconds\": 1737825512,\n            \"nanos\": 315000000\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Health",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 15 Jan 2025 12:16:21 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Hello World\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "user_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY3MDQyNzIsInN1YiI6IjY3ODI5Y2NjMDFhMjlhMjAyZWYyZTdlYyJ9.1wyD2t_krxJRm0s4FfmrOVLh-oEzrZnIfhETYOiJwv4"
+		},
+		{
+			"key": "bucket_name",
+			"value": "integrations",
+			"type": "default"
+		}
+	]
+}

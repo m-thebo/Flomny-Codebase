@@ -1,0 +1,31 @@
+import requests
+import json
+
+def fetch_and_save_posts(url, filename):
+  """Fetches the first 10 posts from the given URL and saves them to a JSON file.
+
+  Args:
+      url (str): The base URL of the API.
+      filename (str): The name of the JSON file to save the data to.
+  """
+
+  posts = []
+  for i in range(1, 11):
+    post_url = f"{url}/{i}"
+    response = requests.get(post_url)
+
+    if response.status_code == 200:
+      posts.append(response.json())
+    else:
+      print(f"Error fetching post {i}: {response.status_code}")
+
+  with open(filename, "w") as f:
+    json.dump(posts, f, indent=4)
+
+# Replace with your desired filename
+filename = "posts.json"
+
+# Fetch and save posts
+fetch_and_save_posts("https://jsonplaceholder.typicode.com/posts", filename)
+
+print(f"Data saved to {filename}")

@@ -1,0 +1,53 @@
+import requests
+import json
+import sqlite3
+
+def fetch_and_save_posts_to_db(url, db_file):
+  """Fetches the first 10 posts from the given URL and saves them to a SQLite database.
+
+  Args:
+      url (str): The base URL of the API.
+      db_file (str): The name of the SQLite database file.
+  """
+
+  posts = []
+  for i in range(1, 11):
+    post_url = f"{url}/{i}"
+    response = requests.get(post_url)
+
+    if response.status_code == 200:
+      posts.append(response.json())
+    else:
+      print(f"Error fetching post {i}: {response.status_code}")
+
+  # Connect to the database
+  conn = sqlite3.connect(db_file)
+  cursor = conn.cursor()
+
+  # Create a table if it doesn't exist
+  cursor.execute("""
+    CREATE TABLE IF NOT EXISTS posts (
+      id INTEGER PRIMARY KEY,
+      userId INTEGER,
+      title TEXT,
+      body TEXT
+    )
+  """)
+
+  # Insert the posts into the table
+  for post in posts:
+    cursor.execute("""
+      INSERT INTO posts (id, userId, title, body) VALUES (?, ?, ?, ?)
+    """, (post['id'], post['userId'], post['title'], post['body']))
+
+  # Commit the changes and close the connection
+  conn.commit()
+  conn.close()
+
+  print(f"Data saved to {db_file}")
+
+# Replace with your desired database filename
+db_file = "posts.db"
+
+# Fetch and save posts to the database
+fetch_and_save_posts_to_db("https://jsonplaceholder.typicode.com/posts", db_file)

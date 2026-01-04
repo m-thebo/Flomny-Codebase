@@ -1,0 +1,101 @@
+services:
+
+  workflow-service:
+    build:
+      context: ../workflow-service
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "50002:50002"
+    deploy:
+      mode: replicated
+      replicas: 1
+    env_file:
+      - ../workflow-service/.env
+
+  auth-service:
+    build:
+      context: ../auth-service
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "50000:50000"
+    deploy:
+      mode: replicated
+      replicas: 1
+    env_file:
+      - ../auth-service/.env
+
+  api-gateway:
+    build:
+      context: ../api-gateway
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    deploy:
+      mode: replicated
+      replicas: 1
+    depends_on:
+      - auth-service
+    env_file:
+      - ../api-gateway/.env
+
+  integration-service:
+    build:
+      context: ../integration-service
+      dockerfile: ./Dockerfile
+    ports:
+      - "50051:50051"
+    depends_on:
+      - redis
+    env_file:
+      - ../integration-service/.env
+
+  integration-chunker:
+    build:
+      context: ../integration-chunker
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - redis
+    env_file:
+      - ../integration-chunker/.env
+
+  integration-chunker-pro:
+    build:
+      context: ../integration-chunker-pro
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - redis
+    env_file:
+      - ../integration-chunker-pro/.env
+
+  execution-service:
+    build:
+      context: ../execution-service
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "50010:50010"
+    deploy:
+      mode: replicated
+      replicas: 1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  redis:
+    image: redis:latest
+    container_name: fyp_backend_redis
+    restart: always
+    command: redis-server --save 20 1 --loglevel warning --requirepass secretpass
+    ports:
+      - "6379:6379"
+    volumes:
+      - fyp_backend_redis_data:/data
+
+volumes:
+  fyp_mongodb_data:
+    external: true
+  fyp_backend_redis_data:

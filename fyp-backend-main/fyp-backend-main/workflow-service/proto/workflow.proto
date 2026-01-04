@@ -1,0 +1,160 @@
+syntax = "proto3";
+
+package workflow;
+option go_package = "github.com/multiagentai/backend/workflow-service";
+
+
+import "google/protobuf/timestamp.proto";
+
+message Workflow {
+    string id = 1;
+    string name = 2;    
+    string description = 3;
+    string createdBy = 4;
+    bool public = 5;
+    string workflowURL = 6;
+    optional string projectId = 7;
+    google.protobuf.Timestamp createdAt = 8;
+    google.protobuf.Timestamp updatedAt = 9;
+    google.protobuf.Timestamp deletedAt = 10;
+}
+
+message Project {
+    string id = 1;
+    string title = 2;
+    string description = 3;
+    int32 workflowCount = 4;
+    string createdBy = 5;
+    google.protobuf.Timestamp createdAt = 6;
+    google.protobuf.Timestamp updatedAt = 7;
+    google.protobuf.Timestamp deletedAt = 8;
+}
+
+message CreateProjectRequest {
+    string title = 1;
+    string description = 2;
+}
+
+message CreateProjectResponse {
+    Project project = 1;
+}
+
+message GetProjectsRequest {}
+
+message GetProjectsResponse {
+    repeated Project projects = 1;
+}
+
+message GetProjectByIdRequest {
+    string id = 1;
+}
+
+message GetProjectByIdResponse {
+    Project project = 1;
+    repeated Workflow workflows = 2;
+}
+
+message UpdateProjectRequest {
+    string id = 1;
+    string title = 2;
+    string description = 3;
+}
+
+message UpdateProjectResponse {
+    Project project = 1;
+}
+
+message DeleteProjectRequest {
+    string id = 1;
+}
+
+message DeleteProjectResponse {
+    bool success = 1;
+}
+
+message CreateWorkflowRequest {
+    string name = 1;
+    string description = 2;
+    bool public = 3;
+    string workflowURL = 4;
+    optional string projectId = 5;
+}
+
+message CreateWorkflowResponse {
+    Workflow workflow = 1;
+}
+
+message DeleteWorkflowRequest {
+    string id = 1;
+}
+
+message DeleteWorkflowResponse {
+    bool success = 1;
+}
+
+message GetUserWorkflowsRequest {
+    optional string projectId = 1;  // Optional: filter by project
+}
+
+message GetUserWorkflowsResponse {
+    repeated Workflow workflows = 1;
+}
+
+message SearchWorkflowRequest {
+    string query = 1;
+    optional string projectId = 2;  // Optional: filter by project
+}
+
+message SearchWorkflowResponse {
+    repeated Workflow workflows = 1;
+}
+
+message UpdateWorkflowRequest {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    string workflowURL = 4;
+    optional string projectId = 5;
+}
+
+message UpdateWorkflowResponse {
+    Workflow workflow = 1;
+}
+
+message GetWorkflowByIdRequest {
+    string id = 1;
+}
+
+message GetWorkflowByIdResponse {
+    Workflow workflow = 1;
+}
+
+message GetPaginatedCommunityWorkflowsRequest {
+    int32 offset = 1;
+    int32 limit = 2;
+}
+
+message GetPaginatedCommunityWorkflowsResponse {
+    repeated Workflow workflows = 1;
+    int32 total = 2;
+}
+
+service WorkflowService {
+    // Project
+    rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse); //Done
+    rpc GetProjects(GetProjectsRequest) returns (GetProjectsResponse); //Done
+    rpc GetProjectById(GetProjectByIdRequest) returns (GetProjectByIdResponse); //Done
+    rpc UpdateProject(UpdateProjectRequest) returns (UpdateProjectResponse); //Done
+    rpc DeleteProject(DeleteProjectRequest) returns (DeleteProjectResponse); //Done
+
+    // Search
+    rpc SearchWorkflow(SearchWorkflowRequest) returns (SearchWorkflowResponse);
+
+    // Workflow
+    rpc CreateWorkflow(CreateWorkflowRequest) returns (CreateWorkflowResponse); //Done
+    rpc DeleteWorkflow(DeleteWorkflowRequest) returns (DeleteWorkflowResponse); //Done
+    rpc GetUserWorkflows(GetUserWorkflowsRequest) returns (GetUserWorkflowsResponse); //Done
+    rpc GetWorkflowById(GetWorkflowByIdRequest) returns (GetWorkflowByIdResponse); // Done
+    rpc UpdateWorkflow(UpdateWorkflowRequest) returns (UpdateWorkflowResponse); //Done
+    rpc GetPaginatedCommunityWorkflows(GetPaginatedCommunityWorkflowsRequest) returns (GetPaginatedCommunityWorkflowsResponse);
+}

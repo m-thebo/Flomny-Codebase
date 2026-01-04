@@ -1,0 +1,10 @@
+requests
+urllib3
+beautifulsoup4
+pymysql
+sqlalchemy
+pandas
+numpy
+mysql-connector-python
+fastapi
+uvicorn

@@ -1,0 +1,4 @@
+{
+    "GOOGLE_API_KEYS": ["firstkey", "secondkey"],
+    "TAVILY_API_KEY": "tvly-...."
+}

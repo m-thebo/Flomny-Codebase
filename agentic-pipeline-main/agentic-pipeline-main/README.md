@@ -1,0 +1,1 @@
+Change config.sample.json to config.json and add api-key

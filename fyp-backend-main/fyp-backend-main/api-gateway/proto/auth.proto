@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package auth;
+option go_package = "github.com/multiagentai/backend/auth-service";
+import "google/protobuf/timestamp.proto";
+
+message User {
+    string id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    string email = 4;
+    string password = 5;
+    string signin_method = 6;
+    int64 credits = 7;
+    google.protobuf.Timestamp createdAt = 8;
+    google.protobuf.Timestamp updatedAt = 9;
+    google.protobuf.Timestamp deletedAt = 10;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string accessToken = 1;
+}
+
+message RegisterRequest {
+    string firstname = 1;
+    string lastname = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message RegisterResponse {
+    string token = 1;
+    User user = 2;
+}
+
+message SocialAuthRequest {
+    string token = 1;
+}
+
+message SocialAuthResponse {
+    string token = 1;
+    User user = 2;
+}
+
+message GetUserRequest {}
+
+message GetUserResponse {
+    User user = 1;
+}
+
+message EditUserRequest {
+    string firstname = 1;
+    string lastname = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message EditUserResponse {
+    User user = 1;
+}
+
+message DeleteUserRequest {}
+
+message DeleteUserResponse {
+    User user = 1;
+}
+
+service AuthService {
+    rpc Login(LoginRequest) returns (LoginResponse);
+    rpc Register(RegisterRequest) returns (RegisterResponse);
+    rpc SocialAuth(SocialAuthRequest) returns (SocialAuthResponse);
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+    rpc EditUser(EditUserRequest) returns (EditUserResponse);
+    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+}
